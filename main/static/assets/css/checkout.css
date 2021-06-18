@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Frijole&display=swap');
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root{
+  --main-font: 'Frijole', cursive;
+}
+
+
+.topbar {
+  width: 100%;
+  height: 5%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 10px;
+}
+
+
+.row {
+  margin: none;
+  margin-top: none;
+  padding-top: 20px;
+}
+
+
+button {
+  background: transparent;
+  outline: none;
+  cursor: pointer;
+  padding: 5px;
+  border-width: thin;
+  transition: 1s;
+  width: auto;
+  margin-top: 5px;
+}
+button:hover {
+  transform: scale(0.8);
+}
+button a {
+  color: black;
+  font-style: normal;
+  text-decoration: none;
+  transition: 1s;
+}
+button a:hover {
+  text-decoration: none;
+  color: inherit;
+  font-weight: lighter;
+}
+input {
+  width: 100%;
+  margin-bottom: none;
+  padding: 10px;
+  border: none;
+  border: 1px solid #5F5FB0;
+  border-radius: 3px;
+  font-size: 1rem;
+  outline: none;
+}
+.dropdown {
+  width: 50%;
+}
+
+  header {
+    min-height: 100vh;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+  }
+  .login_box {
+    min-width: 30%;
+    transition: 0.5s;
+    padding: 10px;
+  }
+
+  .login_box h3 {
+    font-size: 2rem;
+    font-family: var(--main-font);
+    color: black;
+    margin: 20px;
+  }
+  .login_box h5 {
+    color: black;
+    margin-top: -15px;
+  }
+  .box hr {
+    width: 50%;
+    margin: auto;
+    padding: 5px;
+    background-color: #E1F06C;
+    border: none;
+  }
+   /* .box input {
+    width: 90%;
+    margin: 20px 0px;
+    padding: 10px;
+    border: none;
+    border: 1px solid #5F5FB0;
+    font-size: 1.3rem;
+    background: transparent;
+    outline: none;
+  } */
+
+  .login {
+    text-decoration: none;
+  }
+
+  ::placeholder {
+    color: #000;
+    font-size: 1rem;
+  }

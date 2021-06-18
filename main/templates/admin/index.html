@@ -1,0 +1,13 @@
+{% extends 'admin/master.html' %}
+{% block head_css %}
+{{ super() }}
+<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='assets/css/admin.css')}}" />
+<link rel="icon" href="{{ url_for('static', filename='assets/img/logo.png')}}" sizes="16x16" type="image/png">
+{% endblock head_css %}
+
+{% block body %}
+    <div class='container'>
+      <h3>Marine Escort and Security Services Limited Admin page</h3>
+      <p>Only for authorized personnel</p>
+    </div>
+{% endblock body %}

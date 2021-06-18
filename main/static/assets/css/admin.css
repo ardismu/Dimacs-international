@@ -1,0 +1,15 @@
+.col-12 {
+    border: 1px solid black;
+    background-color: #AEAEAF;
+    color: black;
+
+}
+.col-12 h2, h3 {
+    text_align: center;
+}
+#column2 {
+    margin-top: 20px;
+}
+.num {
+    float: right;
+}

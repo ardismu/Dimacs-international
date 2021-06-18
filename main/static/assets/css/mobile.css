@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Frijole&display=swap');
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root{
+  --main-font: 'Frijole', cursive;
+}
+
+#main {
+  min-height: 100vh;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+}
+
+
+
+.button {
+  transition: 1s;
+}
+.button:hover {
+  transform: scale(0.8);
+}
+.button a {
+  color: black;
+  font-style: normal;
+  text-decoration: none;
+  transition: 1s;
+}
+
+input {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 10px;
+  border: none;
+  border: 1px solid #5F5FB0;
+  border-radius: 3px;
+  font-size: 1rem;
+  outline: none;
+}
+.fa {
+  width: 30px;
+  height: 25px;
+}
+  ::placeholder {
+    color: #000;
+    font-size: 1rem;
+  }

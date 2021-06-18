@@ -1,0 +1,387 @@
+
+<!DOCTYPE HTML>
+<!--
+	Industrious by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		<title>DIMACS International</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="#DIMACS, #DIL, #DIMACSInternational, DIMACS International" />
+		<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+		<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='assets/css/home.css')}}" />
+		<link rel="icon" href="{{url_for('static', filename='assets/img/logo.png')}}">
+		<style></style>
+	</head>
+	<body class="is-preload" style="background-image: linear-gradient(159deg, rgba(245, 240, 238, 0.95) 8%, rgba(245, 240, 238, 0.95) 100%), 
+													url('../static/assets/img/bg.jpg'); background-repeat: no-repeat; background-size: cover; background-attachment: fixed;">
+	
+	<!--Main Header Logos-->
+	<section>
+		<div class="headerslogo">
+				<div class="logoholde"><img src="../static/assets/img/logo.png" width="80" height="80"/>
+				<strong><p>DIMACS International</p></strong></div>
+				<div class="logoholde"><img src="../static/assets/img/logoS.png" width="80" height="80"/>
+				<strong><p>MESL</p></strong></div>
+				<div class="logoholde"><img src="../static/assets/img/ksl.png" width="80" height="80"/>
+				<strong><p>Kenya Shipyard Limited</p></strong></div>
+				<div class="logoholde"><img src="../static/assets/img/KU.png" width="80" height="80"/>
+				<strong><p>KU RCCD</p></strong></div>
+		</div>
+	</section>
+	
+		<!-- Header -->
+			<header class="header" id="header">
+				<div class="nav-icon"><i  class="fa fa-bars fa-2x " ></i></div>
+				<nav class="nav">
+					{% if current_user.is_authenticated %}
+						<a href="{{ url_for('home') }}">Home</a>
+						<a href="{{ url_for('about') }}">About Us</a>
+						<a href="resource.html">Resource Centre</a>
+						<a href="news.html">Current News</a>
+						<a href="contact.html">Contact Us</a>
+						{% if experts.id_number %}
+							<a href="{{ url_for('expert_portal') }}">Portal</a>
+						{% else %}
+							<a href="{{ url_for('client_portal') }}">Portal</a>
+						{% endif %}
+						<a href="{{ url_for('logout') }}"><i  class="fa fa-sign-out" ></i> Logout</a>
+					{% else %}
+						<a href="{{ url_for('home') }}">Home</a>
+						<a href="{{ url_for('about') }}">About Us</a>
+						<a href="resource.html">Resource Centre</a>
+						<a href="news.html">Current News</a>
+						<a href="contact.html">Contact Us</a>
+						<div class="dropdown">
+							<a class="dropbtn" href="#">Registration <i class="icons fa fa-caret-down"></i></a>
+							<div class="dropdown-content">
+							  <a href="{{ url_for('register') }}">Expert Registration</a>
+							  <a href="{{ url_for('client_register') }}">Client Registration</a>
+							</div>
+						</div>
+						<div class="dropdown">
+							<a class="dropbtn" href="#">Log In <i class="icons fa fa-caret-down"></i></a>
+							<div class="dropdown-content">
+							  <a href="{{ url_for('login') }}"><i  class="fa fa-sign-in" ></i> Expert LogIn</a>
+							  <a href="{{ url_for('client_login') }}"><i  class="fa fa-sign-in" ></i> Client LogIn</a>
+							</div>
+						  </div>
+					{% endif %}
+				</nav>
+		</header>
+<!-- Header for Small Device -->
+		<header id="headerX">					
+			<a class="logo" href="{{ url_for('home') }}"><img src="{{url_for('static', filename='assets/img/logo.png')}}" width="30" height="30" style=" margin-top: 0.5em;"/> DIMACS Int. Ltd</a>
+			<nav>
+				<a href="#menu">Menu</a>
+			</nav>
+		</header>
+
+			<!-- Nav -->
+			<nav id="menu">
+				<ul class="links">
+					{% if current_user.is_authenticated %}
+						<li><a href="{{ url_for('about') }}">About Us</a></li>
+						<li><a href="{{ url_for('resource') }}">Resource Centre</a></li>
+						<li><a href="{{ url_for('news') }}">Current News</a></li>
+						<li><a href="{{ url_for('contact') }}">Contact Us</a></li>
+						<li>
+						{% if experts.id_number %}
+							<a href="{{ url_for('expert_portal') }}">Portal</a>
+						{% else %}
+							<a href="{{ url_for('client_portal') }}">Portal</a>
+						</li>
+						<li>
+						{% endif %}
+							<a href="{{ url_for('logout') }}"><i  class="fa fa-sign-out" ></i> Logout</a>
+						</li>
+					{% else %}
+						<li><a href="{{ url_for('about') }}">About Us</a></li>
+						<li><a href="{{ url_for('resource') }}">Resource Centre</a></li>
+						<li><a href="{{ url_for('news') }}">Current News</a></li>
+						<li><a href="{{ url_for('contact') }}">Contact Us</a></li>
+						<li>
+							<div class="dropdown">
+								<a class="dropbtn" href="#">Registration <i class="icons fa fa-caret-down"></i></a>
+								<div class="dropdown-content" style="padding-left: 4rem;">
+								<a href="{{ url_for('register') }}">Expert Registration</a>
+								<a href="{{ url_for('client_register') }}">Client Registration</a>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="dropdown">
+								<a class="dropbtn" href="#">Log In <i class="icons fa fa-caret-down"></i></a>
+								<div class="dropdown-content">
+								<a href="{{ url_for('login') }}"><i  class="fa fa-sign-in" ></i> Expert LogIn</a>
+								<a href="{{ url_for('client_login') }}"><i  class="fa fa-sign-in" ></i> Client LogIn</a>
+								</div>
+							</div>
+						</li>
+					{% endif %}
+				</ul>
+			</nav>
+			
+			<!-- Banner -->
+			<section id="banner" style="background-image: linear-gradient(159deg, rgba( 0, 0, 0, 0.6) 8%, rgba(17, 17, 17, 0.6) 100%),
+													url('../static/assets/img/construction.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center;">
+				<div class="inner">
+				<h1 class="has-text-align-center margin-bottom-half">DIMACS International Ltd.</h1>
+
+
+
+				<p class="" style="color:#ffffff;line-height:1.5;"><em>'Kuna mwanga mbele'</em></p>
+				</div>
+
+				<!--video autoplay loop muted playsinline src="{{url_for('static', filename='assets/img/banner.mp4')}}"></video>
+				<img src="images/banner1.jpg"/-->
+				<!--<video autoplay loop muted playsinline src="images/banner.mp4"></video>-->
+			</section>
+	
+		<!-- Highlights --><br>
+<section class="WhoAreWe">
+	<div class="inner">
+		<div class="row">
+			<div class="col-8 col-12-medium" style="text-align: justify;">
+				<header class="special"> <strong><h2>WHO ARE WE?</h2></strong> </header>
+					<p>Dimacs International Ltd. is a limited liability Company incorporated under the companies Act Chapter 486 of the Laws of Kenya.
+						The company is owned by a group of Senior Retired Military Officers from the three branches of Kenya Defence Forces namely, The Kenya Army, Kenya Air Force and Kenya Navy.
+						Other members of the disciplined forces like the Kenya National Police, Kenya Wildlife Services, Kenya Forest Services and other Government Security related agencies have also joined in to become members.
+						The company was registered after the realization of the vast wasted knowledge and talent after retirement of disciplined forces personnel.
+						Generally in the Defence Forces, people retire on a fixed-age limit pegged on a rank-to-age fixed timeframe. This has resulted in an ever growing “Pool of Young Retired Professionals” who are between early 40s up to 60 years.
+						Most of the retirees have had sterling careers spanning over twenty years in the service after intensive training both locally and abroad.
+						This brain wastage has resulted in draining the government resources on training people who it expends with before maximum utilization of their professional resources.
+						Unfortunately it creates a pool of idle but highly professional and reliable people. Suffice to say that this highly vulnerable group can easily be influenced and manipulated to engage in anti-social activities if their future welfare is not well articulated after retirement.
+						In essence, this group is both a ticking time bomb and a goldmine. Dimacs International Ltd. wants to treat it as the latter.
+					</p>
+			</div>
+
+			<div class="col-4 col-12-medium col-12-small">
+				<div class="sideright">
+				<h3>Affiliated Companies & Institutions:</h3>
+			
+				1. <strong>Kenyatta Univesity Regional Centre for Capacity Development (KU-RCCD)</strong> vide MoU between the KU-RCCD and DIMACS International Ltd (DIL) Dated 1st July 2014.<br></li>
+				2. <strong>National Employment Agency</strong> vide NEA Reg. No. NEA/2021/001/<br></li>
+				3. <strong>Marine Escort Services Ltd</strong> which is a subsidiary of DIL with the following <a href="#MESLPort" id="showMESL">Portfolio:</a></li>
+				</div>
+			</div>
+		</div>	
+	</div>
+</section>												
+							
+<!-- CTA -->
+<section id="cta" style="background-image: linear-gradient(159deg, rgba(27, 17, 17, 0.8) 100%, rgba(27, 17, 17, 0.9) 80%), 
+url('../static/assets/img/banner2.jpg'); background-repeat: no-repeat; background-size: cover; background-attachment: fixed;">
+	<div class="inner">
+		<div class="content">
+			<h2>OUR MISSION</h2> 
+			<p>To equip former servicemen with the skills, attitudes and resources needed for them to transition into a civilian professional career by matching them with the best job prospects available in the corporate and business world.</p>
+			<h2>OUR VISION</h2>
+			<p>To be the preferred institute in the country for companies seeking specialized ex-military personnel and allied services.
+			</p>
+		</div>
+	</div>
+</section>
+
+<!-- MESL Portfolio-->
+<section id="MESLPort" class="MESLPorto wrapper">		
+		<h2><a id="hideMESL" class="icon fa-times" style="  position: fixed; right: 12%; color: #e3e3e3"></a></h2>			
+	<div class="inner">
+		<div class="content">
+			<h1>MESL Guards Company Profile</h1>
+			<h3>INTRODUCTION</h3>
+
+			Marine Escort Services Limited (MESL) is a limited liability company incorporated under the Companies Act Chapter 486 of the laws of Kenya. The company is owned by a group of senior retired military officers, and members from other disciplined forces of the Kenyan government.
+			As such, MESL boasts of the vastness of its pool of professional expertise to ensure unparalleled service in the security industry. 
+
+			<h3>OUR VISION</h3>
+
+			To provide reliable integrated security solutions with unparalleled service, and quality delivery on land, air, and sea. 
+
+			<h3>OUR MISSION </h3>
+
+			To develop a global footprint with the capacity to deploy diligent and efficient teams globally to secure and support Land, Air, and Maritime operations
+
+			<h3>WHY MESL?</h3>
+
+			MESL has a countrywide liaison and network outreach that can enable our clientele to operate with the authority of our assurance on their safety and security. 
+
+			<h3>MODE OF OPERATION</h3>
+
+			<strong>Private-Public Partnerships:</strong>
+
+			The company has programmed to develop Institutional Public-Private Partnerships in the management of Integrated Security Solutions by building synergies with other Government Agencies.
+			To this end, MESL sought and was granted authority to operate Armed Marine Escort Guards vide letter SEC.PO.L 22/12/5/(59) Dated 20th January 2011 by The Ministry of Interior & Coordination of National Government. 
+
+			<ol><li>Regional Coordinators and County Commissioners-: To facilitate easy integration and cooperation with Government Security Agents especially in the North Eastern Region which is prone to terrorist attacks.</li>
+
+			<li>The Kenya Firearms Bureau-: Facilitate in issuing Import/Export and Temporary Firearm Licenses well before the ship arrives at the port for the sake of verification.</li>
+
+			<li>The Immigration-: Issue Temporary Permits and visas for the visiting and transit crew onboard, well before the ship's arrival and subsequent docking.</li>
+
+			<li>The Kenya Police Service-: Safe storage of weapons in the Police Armoury at the Kilindini Port and law enforcement where there is culpability by a visiting Vessel.</li>
+
+			<li>The KRA and Customs Department:- Verification of weapons on board the vessel and enforcement of due payments to be made to the exchequer.</li>
+
+			<li>The Kenya Maritime Authority – Obtain information on all incoming Merchant Ships with Armed Guards Onboard through their local Agents</li></ol>
+
+			<strong> OUR AREAS OF STRENGTH </strong>
+
+				Over the period of time, MESL has diversified to offer other services as stipulated below. 
+
+					<ol>
+						<li> Provision of secure transportation and Courier Services:- 
+							<ol>
+								<li> Cash on Transit and valuables including, gems, precious metals, and high-value goods. </li>
+								<li> Bulk Containers escort and eventual delivery to the owner or a secure storage</li>
+							</ol>
+						</li>
+
+						<li> Provision of Security on Business, Private Premises, and Infrastructure:-
+							<ol>
+								<li> We provide highly trained Guards with military background to secure your premises whether it’s a residential, commercial building or High Value Mobile or Static Structures.</li>
+								<li> We have a specialists’ team who have previous experience in Kenya’s military infrastructure development wing and hence can double up as Security Foremen in any type of construction. </li>
+							</ol>
+						</li>
+
+						<li> Provision of VIP Escort and Protection Assignments:-
+							MESL customizes the needs of an individual or a group of people when it comes to VIP Protection and Escort Services. We have a pool of well-trained team and some of them are licensed gun holders for such duties.
+						</li>
+
+						<li> <strong>Provision Of Intelligence Services for Criminal Activities in an Organization:-</strong>
+							MESL has a wide Network of retired personnel who have worked in the government security sector. Depending on the nature of the Crime to be investigated, MESL can provide the necessary experts with requisite knowledge of the type of crime to be investigated. Whether it’s simple theft, pilferage, or cybercrime; all types of criminal activities in an Organization.
+						</li>
+
+						<li> <strong>Provision of Security on Organized Events:-</strong>
+							Do you intend to have a Political Rally in an uncharted grounds? What about a Wedding, Funeral ceremony, Open Air Religious gathering or Celebratory Party? Please contact MESL for an unforgettable serene and conducive secure environment organized by MESL Out-door Security Organizers.
+						</li>
+						<li> <strong>Provision of Manned Security within the broad spectrum of: - </strong>
+							<ol>
+								<li> Electronic Security Systems: - This includes Access Control, CCTV, Intruder Alarms, Fire Detection, Video Analytics, and Building Management Systems among others.</li>
+
+								<li> Secure Facilities Services: - We provide integrated facilities management systems like PIDS (Perimeter Intruder Detection System) for designated sites, estates, commercial customers and government facilities.</li>
+
+								<li> Security Risk Assessments: - We carry out assessments to mitigate against potential security threats in an establishment.</li> 
+
+								<li> Clean-Up:-  All types of Environmental Pollution- Maritime and Land Oil Spillage, Garbage Collection, Unblocking Clogged Urban Rivers, Drainages etc.</li>
+								<li> Marine Escort Services:- Armed /Unarmed Merchant Vessel escort, Super Yacht Security, Cruise Ship Escort Services and Offshore Oil Rig Installations.</li>
+								<li> Provision Of:- Transfer Boat, Processing Documents for Crew, arranging with the Government Agencies for safe weapon storage in the Police Armoury etc. </li>
+							</ol>
+						</li>
+						<li> Provision of Institutional Non-Core Business to Corporate Entities:-
+						We provide simple office work like clerical jobs, secretarial, information desk manning, messengers, and any other menial job in an organization. This particular service extricates the corporate companies from their non-core businesses to concentrate on what they do best and also off-load the unnecessary costs tied to permanent jobs. That aside, the Corporate Entity will be offering direct service with a leaner staff to administer and an overall cut on unnecessary costs associated with a bloated workforce.
+						</li>
+						<li>COVID 19 Pandemic Security and Corporate Entities   
+						We provide well-trained personnel to take care of non-core business in a corporate entity especially in HSE (Health, Safety, and Environment) during this COVID19 Pandemic Era. In this Service, we offer Sanitizers, screen customers’ body temperatures, frequently clean all areas and surfaces prone to getting contacts with the customers and also do weekly or as need be COVID 19 Fumigation as recommended by the Ministry of Health.
+						</li>
+					</ol>
+		
+		</div>
+	</div>
+</section>	
+
+<!-- Testimonials -->
+	<section class="wrapper">
+		<div class="inner">
+			<header class="special">
+				<h2>Hear from our team/clients </h2>
+				<p>what does our team or customers have to say (can be editted - just a draft).</p>
+			</header>
+			<div class="testimonials">
+				<section>
+					<div class="content">
+						<blockquote>
+							<p>We are here to provide quality services.</p>
+						</blockquote>
+						<div class="author">
+							<div class="image">
+								<img src="static/assets/img/pic01.jpg" alt="" />
+							</div>
+							<p class="credit">- <strong>Rtr. Col. D. N. Marete</strong> <br><span>CEO - MESL.</span></p>
+						</div>
+					</div>
+				</section>
+				<section>
+					<div class="content">
+						<blockquote>
+							<p>We are here to make sure our workers are fully trained and well equiped to meet your desired needs.</p>
+						</blockquote>
+						<div class="author">
+							<div class="image">
+								<img src="static/assets/img/pic03.jpg" alt="" />
+							</div>
+							<p class="credit">- <strong>Juliet Nkirote</strong> <br><span>HR - MESL.</span></p>
+						</div>
+					</div>
+				</section>
+				<section>
+					<div class="content">
+						<blockquote>
+							<p>Inserts generic quote about clients, community bla bla</p>
+						</blockquote>
+						<div class="author">
+							<div class="image">
+								<img src="static/assets/img/pic02.jpg" alt="" />
+							</div>
+							<p class="credit">- <strong>Janet Smith</strong> <br><span>Marketing Exc. - MESL.</span></p>
+						</div>
+					</div>
+				</section>
+			</div>
+		</div>
+	</section>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="inner">
+					<div class="content">
+						<section>
+							<h3>We're located</h3>
+							<p>Kahawa Sukari Estate, Garrisa Road, 3rd  South Avenue. Nairobi.</p>
+							<p> Office	: +254 759 838 925 </p>
+						</section>
+						<section>
+							<h4>Shortcut links</h4>
+							<ul class="alt">
+								<li><a href="#">link 1 to direct pages/section.</a></li>
+								<li><a href="#">link 2 to direct pages/section.</a></li>
+								<li><a href="#">link 3 to direct pages/section.</a></li>
+								<li><a href="#">link 4 to direct pages/section.</a></li>
+							</ul>
+						</section>
+						<section>
+							<h4>Find us on Social media</h4>
+							<ul class="plain">
+								<li><a href="#"><i class="icon fa-twitter">&nbsp;</i>Twitter</a></li>
+								<li><a href="#"><i class="icon fa-facebook">&nbsp;</i>Facebook</a></li>
+								<li><a href="#"><i class="icon fa-instagram">&nbsp;</i>Instagram</a></li>
+								<li><a href="#"><i class="icon fa-youtube">&nbsp;</i>Youtube</a></li>
+							</ul>
+						</section>
+					</div>
+					<div class="copyright">
+
+						&copy; DIMACS International 2021 | Designed by <a href="mu-designs.business.com">MuDesigns</a>
+						| Developed by Regan Muthomi.
+					</div>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script type="text/JavaScript"> var theDate=new Date() document.write(theDate.getFullYear()) </script>
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+			<script src="{{url_for('static', filename='assets/js/jquery.min.js')}}"></script>
+			<script src="{{url_for('static', filename='assets/js/breakpoints.min.js')}}"></script>
+			<script src="{{url_for('static', filename='assets/js/browser.min.js')}}"></script>
+			<script src="{{url_for('static', filename='assets/js/util.js')}}"></script>
+			<script src="{{url_for('static', filename='assets/js/main.js')}}"></script>
+			<script src="{{url_for('static', filename='assets/js/readmore.js')}}"></script>
+			<script src="{{url_for('static', filename='assets/js/mobile-menu.js')}}"></script>
+        <!-- End script-->
+
+	</body>
+</html>

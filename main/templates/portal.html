@@ -1,0 +1,196 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>DIMACS International</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<!--link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"-->
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='assets/css/home.css')}}" />
+	<link rel="icon" href="{{url_for('static', filename='assets/img/logo.png')}}">
+	<style>	</style>
+
+</head>
+<body class="is-preload" style="background-image: linear-gradient(159deg, rgba(245, 240, 238, 0.95) 8%, rgba(245, 240, 238, 0.95) 100%),
+													url('../static/assets/img/bg.jpg'); background-repeat: no-repeat; background-size: cover; background-attachment: fixed;">
+{% if client.kra_pin %}
+<!-- Header -->
+	<header id="header" style="position:fixed; top:0;">
+		<!--<a class="logo" href="index.html">MESL</a>-->
+		<nav>
+			<a href="{{ url_for('home') }}">Home</a>
+			<a href="{{ url_for('about') }}">About Us</a>
+			<a href="{{ url_for('resource') }}">Resource Centre</a>
+			<a href="{{ url_for('news') }}">Current News</a>
+			<a href="{{ url_for('contact') }}">Contact Us</a>
+			<a href="{{url_for( 'logout' )}}"><i class="fa fa-sign-out" aria-hidden="true"></i> Log Out</a>
+	  </nav>
+</header>
+
+<!-- Header for Small Device -->
+<header id="headerX">
+					
+	<a class="logo" href="{{ url_for('home') }}"><img src="{{url_for('static', filename='assets/img/logo.png')}}" width="30" height="30" style=" margin-top: 0.5em;"/> DIMACS Int. Ltd</a>
+	<nav>
+		<a href="#menu">Menu</a>
+	 </nav>
+</header>
+
+	<!-- Nav -->
+	<nav id="menu">
+		<ul class="links">
+			<li><a href="{{ url_for('about') }}">About Us</a></li>
+			<li><a href="{{ url_for('resource') }}">Resource Centre</a></li>
+			<li><a href="{{ url_for('news') }}">Current News</a></li>
+			<li><a href="{{ url_for('contact') }}">Contact Us</a></li>
+			<li><a href="{{url_for( 'logout' )}}"><i class="fa fa-sign-out" aria-hidden="true"></i> Log Out</a></li>
+		</ul>
+	</nav>
+
+
+<!-- Body -->
+		<section id="mainPortal">
+			{% with messages = get_flashed_messages(with_categories = true) %}
+				{% if messages %}
+				  {% for category, message in messages %}
+					<div class='alert alert-{{ category }}'>
+					  {{ message }}
+					</div>
+				  {% endfor %}
+				{% endif %}
+			{% endwith %}
+
+				<div class="row">
+
+					<div id="searchBy" class="col-3 col-11-medium col-11-small">
+						<h4>Logged in as <strong>{{ client.employer_Name }}</strong></h4>
+						<p><a href="{{ url_for('update_client_profile') }}">Edit Profile</a></p>
+						<h3><strong>Search Experts</strong></h3>
+						<form class="search-form">
+							<!--Incase you need to use select to filter the search-->
+							<select id="filterEmployees" class="searchByForm" name="filEmp">
+								<option value="">Search By</option>
+								<option value="location">Location</option>
+								<option value="expertise">Expertise</option>
+							</select>
+							<input class="searchByForm" type="search" id="gsearch" name="gsearch">
+						</form>
+					</div>
+
+					<div  id="disTable" class="col-8 col-10-medium col-12-small">
+						<!-- Table -->
+						<div class="table-wrapper">
+								<table  id="tEmployees">
+									<tbody>
+										<thead>
+											<th><strong> Name </strong></th>	
+											<th><strong> Location </strong></th>
+											<th><strong> Profession</strong></th>
+											<th><strong> View Profile </strong></th>
+										</thead>
+										{% for user in users %}
+											<tr class="expert-info">
+												<td>{{ user.name }}</td>
+												<td>{{ user.location }}</td>
+												<td>{{ user.profession }}</td>
+												<td class="view-profile">view <i class="fa fa-eye">
+													<div class="profile main-hide">
+														<div class="close"><i class="fa fa-times"></i></div>
+														<div class="introduction">
+															<img src='static/assets/img/anonymous.png'>
+															<div class="about-user">
+																<h2>{{ user.name }}</h2>
+																<p>Hello I am {{ user.name }}.<br />I am a {{ user.profession }}.</p>
+															</div>
+														</div>
+														<div class="user-info">
+															<div class="profile-info mail">
+																<i class="fa fa-envelope" ></i>
+																<p>{{ user.email }}</p>
+															</div>
+															<div class="profile-info">
+																<i class="fa fa-phone" ></i>
+																<p>{{ user.mobile }}</p>
+															</div>
+															<div class="profile-info">
+																<i class="fa fa-briefcase"></i>
+																<p>{{ user.profession }}</p>
+															</div>
+															<div class="profile-info gender">
+																<i class="fa fa-venus-mars"></i>
+																<p>{{ user.gender}}</p>
+															</div>
+															<div class="profile-info location">
+																<i class="fa fa-map-marker"></i>
+																<p>{{ user.location }}</p>
+															</div>
+														</div>
+													</div>
+												</i></td>
+											</tr>
+										{% endfor %}
+									</tbody>
+								</table>
+						</div>
+					</div>
+
+
+				</div>
+				<!--PROFILE POP UP
+				<div class="main">
+					<div class="profile">
+						<div class="close"><i class="fa fa-times fa-2x"></i></div>
+						<div class="introduction">
+							<img src='static/assets/img/anonymous.png'>
+							<div class="about-user">
+								<h2>John Doe</h2>
+								<p>Hello I am John Doe.<br />I am a Web Developer.</p>
+							</div>
+						</div>
+						<div class="user-info">
+							<div class="profile-info mail">
+								<i class="fa fa-envelope" ></i>
+								<p>mail.email.com</p>
+							</div>
+							<div class="profile-info">
+								<i class="fa fa-phone" ></i>
+								<p>2547864646463</p>
+							</div>
+							<div class="profile-info">
+								<i class="fa fa-briefcase"></i>
+								<p>Engineer</p>
+							</div>
+							<div class="profile-info gender">
+								<i class="fa fa-venus-mars"></i>
+								<p>Male</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<END PROFILE POP UP-->
+		</section>
+		<script>
+			viewProfile = document.querySelectorAll('.view-profile');
+			viewProfile.forEach(view => { view.addEventListener('click', () => {
+					profile = view.querySelector('.profile');
+					profile.classList.toggle('main-hide');
+				})
+			})
+			
+		</script>
+		<!-- Scripts -->
+		<script src="{{url_for('static', filename='assets/js/jquery.min.js')}}"></script>
+		<script src="{{url_for('static', filename='assets/js/breakpoints.min.js')}}"></script>
+		<script src="{{url_for('static', filename='assets/js/browser.min.js')}}"></script>
+		<script src="{{url_for('static', filename='assets/js/util.js')}}"></script>
+		<script src="{{url_for('static', filename='assets/js/main.js')}}"></script>
+		<script src="{{url_for('static', filename='assets/js/readmore.js')}}"></script>
+	{% else %}
+		<div class="error mt-4">
+			<h3>You Must be logged in as Client to access this page!</h3>
+		</div>
+	{% endif %}
+</body>
+</html>

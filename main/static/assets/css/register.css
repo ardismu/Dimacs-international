@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+:root{
+  --main-font: "Raleway", sans-serif;
+}
+html {
+  font-family: "Raleway", Arial, Helvetica, sans-serif;
+}
+header {
+  min-height: 100vh;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+}
+.login_box {
+  margin: 20px 0 20px 0;
+  border-radius: 10px;
+  min-width: 30%;
+  text-align: center;
+  transition: 0.5s;
+  padding: 10px;
+  border: 1px solid rgb(40, 56, 145);
+}
+.login_box:hover {
+  -webkit-box-shadow: 0px 0px 31px 25px rgba(40, 56, 145,0.45);
+  -moz-box-shadow: 0px 0px 31px 25px rgba(40, 56, 145,0.45);
+  box-shadow: 0px 0px 31px 25px rgba(40, 56, 145,0.45);
+}
+.login_box h3 {
+  font-size: 2rem;
+  font-family: var(--main-font);
+  color: black;
+  margin: 20px;
+}
+.login_box h5 {
+  color: black;
+  margin-top: -15px;
+}
+.login_box hr {
+  width: 50%;
+  margin: auto;
+  padding: 5px;
+  background-color: #E1F06C;
+  border: none;
+}
+.login_box input {
+  width: 90%;
+  margin: 10px 0px;
+  padding: 10px;
+  border: none;
+  border-bottom: 1px solid #5F5FB0;
+  font-size: 1.3rem;
+  background: transparent;
+  outline: none;
+}
+
+.button:hover {
+  transform: scale(0.9);
+}
+.login {
+  text-decoration: none;
+}
+.fa {
+  margin-left: 5px;
+  color: #283891;
+}
+.eye {
+  position: absolute;
+  margin-left: -60px;
+  margin-top: 30px;
+}
+#hide1 {
+  display: none;
+}
+.eye1 {
+  position: absolute;
+  margin-left: -60px;
+  margin-top: 30px;
+}
+#hide_c {
+  display: none;
+}
+small a {
+  text-decoration: none;
+}
+::placeholder {
+  color: #000;
+  font-size: 1rem;
+}
+
+.skills, .gender{
+  width: 90%;
+  margin: 10px 0px;
+  padding: 10px;
+  border: none;
+  border-bottom: 1px solid #5F5FB0;
+  font-size: 0.9rem;
+  background: transparent;
+  outline: none;
+}

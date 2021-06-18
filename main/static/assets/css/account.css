@@ -1,0 +1,170 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    background: transparent;
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    color: black;
+    border-bottom: 1px solid #848484;
+    border-width: thin;
+}
+
+.brand-title {
+    font-size: 1.5rem;
+    margin: .5rem;
+}
+
+.navbar-links {
+    height: 100%;
+}
+
+.navbar-links ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+
+.navbar-links li {
+    list-style: none;
+}
+
+.navbar-links li a {
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    padding: 1rem;
+}
+
+.navbar-links li:hover {
+    color: #3B3F6B;
+}
+
+.toggle-button {
+    position: absolute;
+    top: .75rem;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+}
+
+.toggle-button .bar {
+    height: 3px;
+    width: 100%;
+    background-color: black;
+    border-radius: 10px;
+}
+
+@media (max-width: 800px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .toggle-button {
+        display: flex;
+    }
+
+    .navbar-links {
+        display: none;
+        width: 100%;
+    }
+
+    .navbar-links ul {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .navbar-links ul li {
+        text-align: center;
+    }
+
+    .navbar-links ul li a {
+        padding: .5rem 1rem;
+    }
+
+    .navbar-links.active {
+        display: flex;
+    }
+}
+
+.main {
+    width: 100%
+    position: relative;
+}
+.main > .update-form {
+    width: 50%;
+    text-align: center;
+    margin: 0 auto;
+
+}
+.main > .update-form h3 {
+    padding-top: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+}
+.main > .update-form h5 {
+    font-size: 1rem;
+    text-align: center;
+}
+
+button {
+  background: transparent;
+  outline: none;
+  cursor: pointer;
+  padding: 5px;
+  border-width: thin;
+  transition: 1s;
+  width: auto;
+  text-align: center;
+  margin: 10px;
+}
+button:hover {
+  transform: scale(0.8);
+}
+button a {
+  color: black;
+  font-style: normal;
+  text-decoration: none;
+  transition: 1s;
+}
+button a:hover {
+  text-decoration: none;
+  color: inherit;
+  font-weight: lighter;
+}
+input {
+  width: 80%;
+  margin: 5px 0px;
+  padding: 20px;
+  border: 1px solid #5F5FB0;
+  font-size: 1rem;
+  background: transparent;
+  outline: none;
+}
+.display {
+  padding: 20px;
+}
+.skills {
+  width: 80%;
+  margin: 5px 0px;
+  padding: 20px 30px 20px 20px;
+  border: 1px solid #5F5FB0;
+  font-size: 1rem;
+  background: transparent;
+  outline: none;
+}

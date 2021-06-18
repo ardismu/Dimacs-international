@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Payment</title>
+    <!-- bootstrap -->
+    <script src="https://use.fontawesome.com/97e5be022c.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"trap.min.css rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='assets/css/payment.css')}}" />
+    <link rel="icon" href="{{ url_for('static', filename='assets/img/logo.png')}}" sizes="16x16" type="image/png">
+
+  </head>
+  <body style="background-image: linear-gradient(rgba(255,255,255,0.9),rgba(255,255,255,0.9)), url({{ url_for('static', filename='assets/img/bg.jpg')}}); background-repeat: no-repeat; background-size: cover;">
+    <div class='container'>
+      <div class='row' id='main'>
+        {% with messages = get_flashed_messages(with_categories = true) %}
+          {% if messages %}
+            {% for category, message in messages %}
+              <div class='alert alert-{{ category }}'>
+                {{ message }}
+              </div>
+            {% endfor %}
+          {% endif %}
+        {% endwith %}
+        <div class='col-12 col-sm-6'>
+          <form method="POST", action="">
+            <div id='cards' align='center'>
+            <h3>Payment</h3>
+            <label>Accepted Cards</label>
+            <div class="icon-container">
+              <i class="fa fa-cc-visa" style="color:navy;"></i>
+              <i class="fa fa-cc-amex" style="color:blue;"></i>
+              <i class="fa fa-cc-mastercard" style="color:red;"></i>
+              <i class="fa fa-cc-discover" style="color:orange;"></i>
+            </div>
+            </div>
+            {{ form.hidden_tag() }}
+            <fieldset class='form-group'>
+              <legend class='border-bottom mb-4 text-dark text-muted'>Check Out </legend>
+              <div class='row'>
+                <div class='col-lg-5'>
+                  {% if form.card.errors %}
+                    {{ form.card(class="form-control form-control-lg is-invalid") }}
+                    <div class='invalid-feedback'>
+                      {% for error in form.card.errors %}
+                        <span> {{ error }} </span>
+                      {% endfor %}
+                    </div>
+                  {% else %}
+                    {{ form.card.label(class='form-control-label') }}
+                    {{ form.card(placeholder='1000') }}
+                  {%  endif %}
+                </div>
+                <div class='col-lg-5 offset-lg-2'>
+                  {% if form.subscription.errors %}
+                    {{ form.subscription(class="form-control form-control-lg is-invalid") }}
+                    <div class='invalid-feedback'>
+                      {% for error in form.subscription.errors %}
+                        <span> {{ error }} </span>
+                      {% endfor %}
+                    </div>
+                  {% else %}
+                    {{ form.subscription.label(class='form-control-label') }} <br />
+                    {{ form.subscription }}
+                  {%  endif %}
+                </div>
+              </div>
+              <div class='row'>
+                <div class='col-lg-5'>
+                  {% if form.first_name.errors %}
+                    {{ form.first_name(class="form-control form-control-lg is-invalid") }}
+                    <div class='invalid-feedback'>
+                      {% for error in form.first_name.errors %}
+                        <span> {{ error }} </span>
+                      {% endfor %}
+                    </div>
+                  {% else %}
+                    {{ form.first_name.label(class='form-control-label') }}
+                    {{ form.first_name(placeholder='Kamau') }}
+                  {%  endif %}
+                </div>
+                <div class='col-lg-5 offset-lg-2'>
+                  {% if form.last_name.errors %}
+                    {{ form.last_name(class="form-control form-control-lg is-invalid") }}
+                    <div class='invalid-feedback'>
+                      {% for error in form.last_name.errors %}
+                        <span> {{ error }} </span>
+                      {% endfor %}
+                    </div>
+                  {% else %}
+                    {{ form.last_name.label(class='form-control-label') }}
+                    {{ form.last_name(placeholder='Omollo') }}
+                  {%  endif %}
+                </div>
+              </div>
+              <div class='row'>
+                <div class='col-lg-5'>
+                  {% if form.card_number.errors %}
+                    {{ form.card_number(class="form-control form-control-lg is-invalid") }}
+                    <div class='invalid-feedback'>
+                      {% for error in form.card_number.errors %}
+                        <span> {{ error }} </span>
+                      {% endfor %}
+                    </div>
+                  {% else %}
+                    {{ form.card_number.label(class='form-control-label') }}
+                    {{ form.card_number(placeholder='1111222233334444') }}
+                  {%  endif %}
+                </div>
+                <div class='col-lg-5 offset-lg-2'>
+                {% if form.expiration_month.errors %}
+                  {{ form.expiration_month(class="form-control form-control-lg is-invalid") }}
+                  <div class='invalid-feedback'>
+                    {% for error in form.expiration_month.errors %}
+                      <span> {{ error }} </span>
+                    {% endfor %}
+                  </div>
+                {% else %}
+                  {{ form.expiration_month.label(class='form-control-label') }}
+                  {{ form.expiration_month(placeholder='12') }}
+                {%  endif %}
+                </div>
+              </div>
+              <div class='row'>
+                <div class='col-lg-5'>
+                {% if form.expiration_year.errors %}
+                  {{ form.expiration_year(class="form-control form-control-lg is-invalid") }}
+                  <div class='invalid-feedback'>
+                    {% for error in form.expiration_year.errors %}
+                      <span> {{ error }} </span>
+                    {% endfor %}
+                  </div>
+                {% else %}
+                  {{ form.expiration_year.label(class='form-control-label') }}
+                  {{ form.expiration_year(placeholder='21') }}
+                {%  endif %}
+                </div>
+                <div class='col-lg-5 offset-lg-2'>
+                {% if form.card_cvv.errors %}
+                  {{ form.card_cvv(class="form-control form-control-lg is-invalid") }}
+                  <div class='invalid-feedback'>
+                    {% for error in form.card_cvv.errors %}
+                      <span> {{ error }} </span>
+                    {% endfor %}
+                  </div>
+                {% else %}
+                  {{ form.card_cvv.label(class='form-control-label') }}
+                  {{ form.card_cvv(placeholder='234') }}
+                {%  endif %}
+                </div>
+              </div>
+          </fieldset>
+          <div class='row mt-3'>
+            <p class='button' align='center'>
+             {{ form.submit }}
+            </p>
+          </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

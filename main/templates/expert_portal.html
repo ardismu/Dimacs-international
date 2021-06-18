@@ -1,0 +1,128 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>DIMACS International</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='assets/css/home.css')}}" />
+    <link rel="icon" href="{{url_for('static', filename='assets/img/logo.png')}}">
+    <style>
+        @media screen and (min-width: 480px) {
+        #table-wrapper1{
+            display: grid;
+            }
+        }
+
+        a{
+            text-decoration: none;
+        }
+
+    </style>
+
+</head>
+<body class="is-preload" style="background-image: linear-gradient(159deg, rgba(245, 240, 238, 0.95) 8%, rgba(245, 240, 238, 0.95) 100%),
+													url('../static/assets/img/bg.jpg'); background-repeat: no-repeat; background-size: cover; background-attachment: fixed;">
+
+{% if experts.id_number %}
+<!-- Header -->
+	<header id="header">
+		<!--<a class="logo" href="index.html">MESL</a>-->
+		<nav>
+			<a href="{{ url_for('home') }}">Home</a>
+			<a href="{{ url_for('about') }}">About Us</a>
+			<a href="resource.html">Resource Centre</a>
+			<a href="news.html">Current News</a>
+			<a href="contact.html">Contact Us</a>
+			<a href="{{url_for( 'logout' )}}"><i class="fa fa-sign-out" aria-hidden="true"></i> Log Out</a>
+	  </nav>
+</header>
+
+<!-- Body -->
+	<section id="mainPortal" class="wrapper mt-3">
+		<div class="content mb-4">
+			{% with messages = get_flashed_messages(with_categories = true) %}
+				{% if messages %}
+				  {% for category, message in messages %}
+					<div class='alert alert-{{ category }}'>
+					  {{ message }}
+					</div>
+				  {% endfor %}
+				{% endif %}
+			{% endwith %}
+			<div class="row" style="margin-left: auto; margin-top: 2rem;">
+				<div class="col-4 col-12-medium">
+					<h3><strong>Profile</strong></h3>
+					<p><a href="{{ url_for('update_expert_profile') }}">Edit Profile</a></p>
+					<!--<form class="">-->
+					<!--Incase you need to use select to filter the search
+					<select id="filterEmployees" name="filEmp">
+						<option value="">Search By</option>
+						<option value="location">Location</option>
+						<option value="expertise">Expertise</option>
+					  </select>
+						<input type="search" id="gsearch" name="gsearch">
+					</form>-->
+				</div>
+				<div class="col-7 col-9-medium col-12-small" style="margin-top: 3rem;">
+					<!--PROFILE POP UP-->
+						<div class="profileEx">
+							<div class="introduction">
+								<img src='static/assets/img/anonymous.png'>
+								<div class="about-user">
+									<h2>{{ experts.name }}</h2>
+								</div>
+							</div>
+							<div class="user-info">
+								<div class="profile-info top">
+									<i class="fa fa-envelope" ></i>
+									<p>{{ experts.email }}</p>
+								</div>
+								<div class="profile-info">
+									<i class="fa fa-phone" ></i>
+									<p>{{ experts.mobile }}</p>
+								</div>
+								<div class="profile-info">
+									<i class="fa fa-briefcase"></i>
+									<p>{{ experts.profession }}</p>
+								</div>
+								<div class="profile-info">
+									<i class="fa fa-briefcase"></i>
+									<p><a href="#" download>View CV</a></p>
+								</div>
+								<div class="profile-info ">
+									<i class="fa fa-venus-mars"></i>
+									<p>{{ experts.gender }}</p>
+								</div>
+								<div class="profile-info bottom mb-4">
+									<i class="fa fa-map-marker"></i>
+									<p>{{ experts.location }}</p>
+								</div>
+							</div>
+						</div>
+					<!--END PROFILE POP UP-->
+				</div>
+
+			</div>
+		</div>
+	</section>
+	<script src="{{url_for('static', filename='assets/js/jquery.min.js')}}"></script>
+	<script src="{{url_for('static', filename='assets/js/breakpoints.min.js')}}"></script>
+	<script src="{{url_for('static', filename='assets/js/browser.min.js')}}"></script>
+	<script src="{{url_for('static', filename='assets/js/util.js')}}"></script>
+	<script src="{{url_for('static', filename='assets/js/main.js')}}"></script>
+	<script src="{{url_for('static', filename='assets/js/readmore.js')}}"></script>
+{% else %}
+	<div class="error mt-4">
+		<h3>
+          You Must be logged in as Expert to access this page!
+          <a href="{{ url_for('expert_portal') }}">Login</a>
+        </h3>
+
+	</div>
+{% endif %}
+</body>
+</html>

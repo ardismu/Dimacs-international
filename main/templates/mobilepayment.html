@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Payment</title>
+    <!-- bootstrap -->
+    <script src="https://use.fontawesome.com/97e5be022c.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"trap.min.css rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='assets/css/mobile.css')}}" />
+    <link rel="icon" href="{{ url_for('static', filename='assets/img/logo.png')}}" sizes="16x16" type="image/png">
+
+  </head>
+  <body style="background-image: linear-gradient(rgba(255,255,255,0.9),rgba(255,255,255,0.9)), url({{ url_for('static', filename='assets/img/bg.jpg')}}); background-repeat: no-repeat; background-size: cover;">
+    <div class='container'>
+      <div class='row' id='main'>
+        {% with messages = get_flashed_messages(with_categories = true) %}
+          {% if messages %}
+            {% for category, message in messages %}
+              <div class='alert alert-{{ category }}'>
+                {{ message }}
+              </div>
+            {% endfor %}
+          {% endif %}
+        {% endwith %}
+        <div class='col-12 col-sm-6'>
+          <form method="POST", action="">
+            <div id='cards' align='center'>
+            <h3>M-pesa Payment <i class="fa fa-mobile"></i></h3>
+            <label class='border-bottom mb-4 text-dark text-muted'>Please choose your subscription.</label>
+            </div>
+            {{ form.hidden_tag() }}
+            <fieldset class='form-group'>
+              <!--legend class='border-bottom mb-4 text-dark text-muted'>Choose your subscription </legend -->
+              <div class='row mb-4'>
+                <div class='col-lg-6 offset-lg-3'>
+                  {% if form.subscription.errors %}
+                    {{ form.subscription(class="form-control form-control-lg is-invalid") }}
+                    <div class='invalid-feedback'>
+                      {% for error in form.subscription.errors %}
+                        <span> {{ error }} </span>
+                      {% endfor %}
+                    </div>
+                  {% else %}
+                    {{ form.subscription.label(class='form-control-label') }} <br />
+                    {{ form.subscription }}
+                  {%  endif %}
+                </div>
+              </div>
+                  <div class='row'>
+                <div class='col-lg-6 offset-lg-3'>
+                  {% if form.mobile.errors %}
+                    {{ form.mobile(class="form-control form-control-lg is-invalid") }}
+                    <div class='invalid-feedback'>
+                      {% for error in form.mobile.errors %}
+                        <span> {{ error }} </span>
+                      {% endfor %}
+                    </div>
+                  {% else %}
+                    {{ form.mobile.label(class='form-control-label') }} <br />
+                    {{ form.mobile
+                    }}
+                  {%  endif %}
+                </div>
+              </div>
+          </fieldset>
+          <div class='row mt-3'>
+            <p class='button' align='center'>
+             {{ form.submit }}
+            </p>
+          </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

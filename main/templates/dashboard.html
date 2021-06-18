@@ -1,0 +1,63 @@
+{% if current_user.role == 'admin' %}
+{% extends 'admin/master.html' %}
+{% block head_css %}
+{{ super() }}
+<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='assets/css/admin.css')}}" />
+<link rel="icon" href="{{ url_for('static', filename='assets/img/logo.png')}}" sizes="16x16" type="image/png">
+{% endblock head_css %}
+
+{% block body %}
+    <div class='container'>
+      <div class="row" id="column2">
+          <div class="col-12 col-lg-3 mt-4 mb-4">
+              <div>
+                  <span>
+                      <h2 class="text-muted">Users</h2>
+                  </span>
+                  <h3 class="num">{{ no_users }}</h3>
+              </div>
+          </div>
+          <div class="col-12 col-lg-3 offset-lg-1 mt-4 mb-4">
+              <div>
+                  <span>
+                      <h2 class="text-muted">Platinum</h2>
+                  </span>
+                  <h3 class="num">{{ p }}</h3>
+              </div>
+          </div>
+          <div class="col-12 col-lg-3 offset-lg-1 mt-4 mb-4">
+              <div>
+                  <span>
+                      <h2 class="text-muted">Gold</h2>
+                  </span>
+                  <h3 class="num">{{ g }}</h3>
+              </div>
+          </div>
+          <div class="col-12 col-lg-3 mt-4 mb-4">
+              <div>
+                  <span>
+                      <h2 class="text-muted">Silver</h2>
+                  </span>
+                  <h3 class="num">{{ s }}</h3>
+              </div>
+          </div>
+          <div class="col-12 col-lg-3 offset-lg-1 mt-4 mb-4">
+              <div>
+                  <span>
+                      <h2 class="text-muted">Bronze</h2>
+                  </span>
+                  <h3 class="num">{{ b }}</h3>
+              </div>
+          </div>
+          <div class="col-12 col-lg-3 offset-lg-1 mt-4 mb-4">
+              <div>
+                  <span>
+                      <h2 class="text-muted">Ordinary</h2>
+                  </span>
+                  <h3 class="num">{{ o }}</h3>
+              </div>
+          </div>
+      </div>
+    </div>
+{% endblock body %}
+{% endif %}

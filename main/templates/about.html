@@ -1,0 +1,685 @@
+<!DOCTYPE HTML>
+<!--
+	Industrious by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		<title>DIMACS International</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--<link rel="stylesheet" href="assets/css/index.css" />-->
+		<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+        <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='assets/css/home.css')}}" />
+        <link rel="icon" href="{{ url_for('static', filename='assets/img/logo.png')}}" sizes="16x16" type="image/png">
+
+		<!-- Script for readmore-->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script></script>
+
+		<style>
+		#banner{
+			background-image: url("images/nh.jpg");
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+			}
+
+
+		</style>
+	</head>
+	<body class="is-preload">
+
+	<!--Logos-->
+	<section>
+	<div class="headerslogo">
+			<div class="logoholde"><center><img src="static/assets/img/logo.png" width="80" height="80"/>
+			<p><strong>DIMACS International</strong></p></center></div>
+			<div class="logoholde"><center><img src="static/assets/img/logoS.png" width="80" height="80"/>
+			<p><strong>MESL</strong></p></center></div>
+			<div class="logoholde"><center><img src="static/assets/img/ksl.png" width="80" height="80"/>
+			<p><strong>Kenya Shipyard Limited</strong></p></center></div>
+			<div class="logoholde"><center><img src="static/assets/img/KU.png" width="80" height="80"/>
+			<p><strong>KU RCCD</strong></p></center></div>
+		</div></section>
+
+		<!-- Header -->
+			<header id="header">
+				<nav>
+					<a href="{{ url_for('home') }}">Home</a>
+					<a href="#">About Us</a>
+					<a href="about.html">Resource Centre</a>
+					<a href="about.html">Current News</a>
+					<a href="about.html">Contact Us</a>
+					<div class="dropdown">
+						<a class="dropbtn" href="#">Online Services <i class="icons fa fa-caret-down"></i></a>
+						<div class="dropdown-content">
+						  <a href="{{ url_for('register') }}">Expert Registration</a>
+						  <a href="{{ url_for('client_register') }}">Client Registration</a>
+						</div>
+					</div>
+					<a class="icon fa fa-sign-in" href="{{ url_for('login') }}">LogIn</a>
+			  </nav>
+	            </header>
+
+		<!-- Header for Small Device -->
+			<header id="headerX">					
+				<a class="logo" href="{{ url_for('home') }}"><img src="{{url_for('static', filename='assets/img/logo.png')}}" width="30" height="30" style=" margin-top: 0.5em;"/> DIMACS Int. Ltd</a>
+				<nav>
+					<a href="#menu">Menu</a>
+				</nav>
+			</header>
+
+				<!-- Nav -->
+				<nav id="menu">
+					<ul class="links">
+						<li><a href="{{ url_for('about') }}">About Us</a></li>
+						<li><a href="{{ url_for('resource') }}">Resource Centre</a></li>
+						<li><a href="{{ url_for('news') }}">Current News</a></li>
+						<li><a href="{{ url_for('contact') }}">Contact Us</a></li>
+						<li>
+							<div class="dropdown">
+							<a class="dropbtn" href="#">Registration <i class="icons fa fa-caret-down"></i></a>
+							<div class="dropdown-content">
+							  <a href="{{ url_for('register') }}">Expert Registration</a>
+							  <a href="{{ url_for('client_register') }}">Client Registration</a>
+							</div>
+							</div>
+						</li>
+						<li><a class="icon fa fa-sign-in" href="{{ url_for('login') }}">LogIn</a></li>
+					</ul>
+				</nav>
+
+
+		<!-- Highlights -->
+<section id="main" class="wrapper">
+	<!-- Elements -->
+	<div class="row">
+		<div class="col-4 col-12-small">
+				<!-- Table -->
+			<div id="t" class="table-wrapper">
+				<table>
+				<tbody>
+				<tr>
+					<td><h4><strong><a id="showBus" href="#BusOpp">The Business Plan</a></strong></h4></td>
+				</tr>
+				<tr>
+					<td><h4><strong><a id="showTrainer" href="#Trainer">Training</a></strong></h4></td>
+				</tr>
+				<tr>
+					<td><h4><strong><a id="showITC" href="#ITC">ITC</a></strong></h4></td>
+				</tr>
+				<tr>
+					<td><h4><strong><a id="showMmodus" href="#Mmodus">Modus Operandi for Contracted Jobs</a></strong></h4></td>
+				</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+		<div id="hiddeen" class="col-7 col-12-medium">
+				<div id="ITC" class="readmore">
+					<h2	><p>Information Technology and Communication, ITC</h2>
+					The role of technology is to make operations easier and to accelerate operations and consequently produce prompt results. Technology also improves the capacities and capabilities of the human resource deployed</br>
+					A majority of DIL’s business and activities are carried out online. The entire recruitment process except for the interviews is done online. It then follows that the greatest investment has gone into developing a robust website and database infrastructure.</p>
+					<h3>Intelligent Application Development</h3>
+					<p>Data on applicants and job orders is collected responsibly and intelligently. The application enables data processing and data analysis so as to draw business lessons on the nature of jobs available as well as being able to qualitatively assess the talent pool. The following application was developed: A website that integrates both the recruitment software as well as the candidates’ database. The site is also the online page for anyone seeking information about DIL</p>
+					<h3>Accounting and Finance</h3>
+					<p>The software program was developed for the entry of data from financial transactions as well as for the generation of reports.</p>
+					<h3>Communication</h3>
+					<p>Emails, phone systems and intranets set up for efficient communication within the company are seamlessly and efficiently linked.</p>
+					<h3>Data Mining Tools</h3>
+					<p>Data analysis is the lifeblood of the company. DIL thrives from data collection to determine the strategic business direction.</p>
+				</div>
+
+				<div id="Mmodus" class="readmore">
+					<h2>Modus Operandi for Contracted Jobs</h2>
+					Depending on the tasks to be accomplished, DIL has a dedicated team of professionals embedded to the Client Project Manager for efficient execution of tasks at hand and advance planning. The Company coordinates and activates all the relevant cells within their data base for immediate deployment if need be within 24 hour notice and handles all the logistics pertaining to following:<br>
+					<ol>
+					<li>Transportation of the workers to and from place of abode.</li>
+					<li>Arrange for their meals and accommodation.</li>
+					<li>Pay for their Medical Insurance and Statutory Government deductions.</li>
+					<li>Provide all the safety gear and tools while at work or make arrangement with the client for such provisions at a cost.</li>
+					<li>Ensure all HSE protocols are adhered to as per Public Health Regulations</li>
+					<li>Enforce and ensure discipline and good work ethics are maintained at all times </li>
+					</ol>
+				</div>
+
+				<div id="BusOpp" class="readmore">
+					<h2>The Bussiness opportunity</h2>
+					The core business functions that DIL is engaged in is as follows but not limited to;
+						<ol>
+						<li>	Defense Contracts</li>
+						<li>	Parastatals and Corporate Entities’ Technical Equipment Maintenance</li>
+						<li>	Maritime Assets Repair and Maintenance</li> <li>	Ship Building</li>
+						<li>	Logistics Support for both Shore and Offshore establishments </li>
+						<li>	Offer Security and Operational Support to Corporate Entities </li>
+						</ol>
+
+					<h3><strong>Challenges and pain points that DIL resolves for Clients</strong></h3>
+					<ol>
+						<li>Assist upcoming businesses with start-up technical and logistical support</li>
+						<li>The start-up company to operate with a lean manageable staff on core business</li>
+						<li>We source for the personnel and manage them on behalf of the company</li>
+						<li>Conduct training and deploy accordingly on behalf of the company</li>
+						<li>Reduce the Client Company’s operating expenses by offloading the burden of the following incidental cost:</li>
+							<ul>
+								<li>	Daily transport to and from work</li>
+								<li>	Cost of feeding and accommodation allowances</li>
+								<li>	Offset cost of monthly statutory contributions to the exchequer (NHIF, NSSF and PAYE)</li>
+								<li>	No monthly pension contribution to the workers.</li>
+								<li>	No Final lump sum and subsequent monthly pension payment to the workers on retirement</li>
+								<li>	HR Department to manage a leaner Staff as compared to a large workforce</li>
+								<li>	The company will never lose working days in terms of leave, indiscipline and sick-offs.</li>
+								<li>	Less expenses on Staff Welfare in terms of car, home, school and emergency loans.</li>
+								<li>	Less expenses on insurance cover for bloated workforce.</li>
+							</ul>
+					</ol>
+				</div>
+
+				<div id="Trainer" class="readmore">
+					<h2><strong> Technical courses offered by DIMACS in conjunction with KU- RCCD </strong></h2>
+
+					DIMACS International Limited (DIL) in conjunction with KU-RCCD offers tailor-made refresher courses in the following technical areas:
+					<ol>
+						<li> Mechanical, Electrical and structural Engineering courses </li>
+						<li> Information Technology and Communication, ITC </li>
+						<li>Architecture, Bsc Spatial Planning, Construction Management etc</li>
+						<li>Technician and Artisan Diplomas and Certificates in Building Construction, Welding, Electrical fittings, Plumbing, Fabricators, Mechanics, Carpenters, Masons, Heavy equipment Operators etc.</li>
+						<li> Any other refresher course as requested by the client.</li>
+					</ol>
+
+					<h2> Disaster preparedness & Emergency Management Courses </h2>
+
+					<h3>INTRODUCTION:</h3>
+						<p><strong>DIMACS International Ltd</strong> was formed by a consortium of experts from diversified fields in Disaster Management. The experts are mostly National and International retired Military Personnel who have had first-hand experience in dealing with real disasters worldwide. Others are highly experienced and respected academia-support-group who have been authority lecturers on the subject in some of the finest universities in the world for several years. We are also proud to be an institution affiliated in partnership with Kenyatta University. That means all the course materials and delivery methods are vetted and certified by the University. We award certificates and diplomas up to Degree level, in conjunction with the University depending on the course offered.
+						Disasters can occur spontaneously without aforethought or can build up quietly without anyone taking notice. They can be natural or manmade. Whatever the case, there is a need for mitigation, preparedness, response and eventual recovery from the catastrophe. In the year 2013 alone, Kenya has witnessed a number of disasters ranging from Fires at the JKIA, grisly road accidents, PSVs blown up by terrorists, collapsing buildings, terrorist attack on Westgate Mall, floods etc. just to name but a few. Currently the worst disaster creeping into our own society and ruining the lives of many young people and the old as well as ALCOHOL and DRUG abuse. Unless, we focus and deliberately confront these new disaster phenomena, then we will loose a whole generation as a nation in terms of unproductive, inebriated population.
+						All these disasters affected and will continue to affect the lives and livelihoods of millions of Kenyans causing untold suffering both to the individuals and the Nation State as a whole.
+						Some of the courses are tailored to target senior management team in core areas who can directly influence the outcome of desired actions to mitigate disasters in their Areas of Responsibility (AOR). The following topics are covered in depth including practical demonstrations if need be.</p>
+						<h3> MODULE 1:- ALCOHOL AND DRUG ABUSE AS A NATIONAL DISASTER </h3>
+						DIMACS International has partnered with Kenyatta University- Regional Centre for Capacity Development, KU-RCD to sensitize both the Youth and the general populace at large on the adverse effects on over-indulgence of the subject. KU-RCD will utilize her extensive countrywide network coverage to reach out to the General Populace and specifically the youth through workshops, seminars, counseling, rehabilitation and finally establishing ToTs working groups at County Levels and if need be at the Ward Levels. This will ensure continuity and ease of monitoring impact assessment on the ground. For the success of this project, DIMACS International is further partnering with the following groups to mobilize the target audience.
+						<ol>
+							<li> Organized Youth groups </li>
+							<li> Schools </li>
+							<li> Churches </li>
+							<li> Maendeleo Ya Wanawake Organization-MYWO </li>
+							<li> NACADA and other Government Agencies </li>
+							<li> NGOs, Multi-National, National and Private Corporate Companies </li>
+						</ol>
+
+					<h3> MODULE 2:- BASIC DISASTER AND EMERGENCY MANAGEMENT COURSE </h3>
+						<ol>
+						<li> Introduction to Disaster Management and Preparedness principles </li>
+						<li> Management of Natural and Technological Hazards </li>
+						<li> Risk and Vulnerability Analysis and Hazard Mapping </li>
+						<li> Mass fatalities and casualty handling </li>
+						<li> Post Traumatic Stress Disorders and counseling </li>
+						<li> HIV/AIDS as a notable disaster at the national and regional level </li>
+						<li> First Aid applications under Disaster Conditions </li>
+						<li> Fire prevention and Basic Control Procedures </li>
+						</ol>
+
+					<h3> MODULE 3:-  DISASTER PREPAREDNESS AND RESPONSE COURSE </h3>
+						<ol><li> Introduction to Emergency Operations Center (EOC)</li>
+						<li> Introduction to Incident Command System (ICS) </li>
+						<li> Managing, Operating, Exercising and Evaluating the EOC
+						<li> Case Study in Organizing and Planning for Events and Incidences on :-</li>
+									<ul><li> Terrorism </li>
+									<li> Piracy </li>
+									<li> Fires in a Built Up Area</li></ul>
+						<li> The implications of the International Humanitarian and Human Rights Laws </li>
+						<li> The Role of the various Humanitarian agencies in Disaster Recovery </li>
+						<li> Contingency and Disaster Recovery Strategies for Organizations</li>
+						<li> Re-Integration of affected personnel to the general populace </li>
+						<li> Dealing with the Media under Disaster Conditions </li>
+						<li> A guided tour to a disaster scene </li>
+						</ol>
+
+						<strong>TARGET GROUP:</strong>
+						Admissions are considered on first come first served basis due to the high demand of the limited slots. Personnel dealing with Anti-terrorism Operations, Security, Transport, Fires and Disaster Management from the following institutions will be given first priority.
+						<ol>
+							<li> Government line ministries. </li>
+							<li> Parastatal and Corporations </li>
+							<li> UN Agencies dealing with humanitarian issues </li>
+							<li> Disciplined uniformed Entities- Military, Police, KFS, KWS, NYS etc </li>
+							<li> County Security Organs. </li>
+							<li> Returning Disciplined Forces from UN Peace Keeping Operations</li>
+						</ol>
+
+					<h3> MODULE 4:- TAILOR MADE COURSES FOR MATATU DRIVERS & CONDUCTORS</h3>
+						<ol>
+							<li> Defensive Driving, basic vehicle maintenance & mandatory tools for responders </li>
+							<li> Pre-boarding and physical check-up for passengers and the vehicle </li>
+							<li> Visual recognition of suspicious passengers with suspicious cargo </li>
+							<li> Bombs, explosives, grenades and other EODs recognition and identification </li>
+							<li>Immediate Action (IA) and Emergency reporting procedures upon an explosion </li>
+							<li> Types of Fire and Fire Fighting techniques in a crowded environment</li>
+							<li> First Aid to injured personnel and Mass Casualty handling
+							<li> Personal Hygiene, passenger handling and road use etiquettes.</li>
+						</ol>
+
+					<h3> MODULE 5: ANTI TERRORISM COURSE</h3>
+
+						Target Group: All security personnel, government and private administrators, Service Industry Managers, legislators, Media teams and all individuals working in terror attack prone places. The ATAP course has been designed to provide attendees, with an understanding of the history of terrorism, and contribute to counteraction and reduction of the current threat. The program covers:
+						<ul>
+							<li> Definitions & types of terrorism</li>
+							<li> An overview Kenyan experience of terrorism </li>
+							<li>Terrorist trend & Interrelationship with other  crimes</li>
+							<li> Tactics and targets </li>
+							<li> Counter terrorism organizations </li>
+							<li> Terrorist attack cycle (TAPI)</li>
+							<li> Situational awareness </li>
+							<li> Introduction to terrorism surveillance ops </li>
+							<li> Introduction to terrorism investigations </li>
+							<li> Overview legal aspects </li>
+							<li> Hostage taking and kidnapping </li>
+							<li> Improvised explosive device & favorite weapons of use awareness </li>
+							<li> Post attack & incident considerations </li>
+							<li> Terrorism and the media </li>
+							<li> Terrorism Financing </li>
+							<li> Human Rights vs Counter Terrorism Ops </li>
+							<li> 	Contemporary Threats </li>
+						</ul>
+
+					<h3>MODULE 6: PHYSICAL SECURITY TRAINING PROGRAM</h3>
+						The physical security training program is designed to provide baseline knowledge of physical security systems and procedures. The survey process is the common thread used in teaching this program. The PSTP provides the participants with fundamental knowledge on many relevant physical security issues, which include vulnerability assessment, familiarization with hardware and procedures. A comprehensive practical exercise is followed by a formal presentation of the survey results by each of the survey groups at the end.
+
+						Target Group: Security Agents/ Managers responsible for protection of vital installations including hotels, office blocks, shopping malls, schools and colleges, warehouses, factories and other large installations.
+
+
+						Recognition of the installation
+						<ol>
+							<li> General recognition </li>
+							<li> The installation operation </li>
+							<li> Borders and gates </li>
+							<li> Buildings, operational and administrative areas, etc. </li>
+							<li> Restricted areas </li>
+							<li> Passes and traffic </li>
+							<li> Vulnerable points </li>
+								<ol>
+									<li> The adversary</li>
+									<li> Types </li>
+									<li> Methods used for gathering intelligencev</li>
+									<li> Modus operandi of the adversary </li>
+								</ol>
+						</ol>
+
+						Physical Security
+						<ol>
+							<li> Recognition & Detection of Weapons/Explosives </li>
+							<li> Theory of Physical Security and Crime Prevention
+							<li>  to Security Design</li>
+							<li> Protective Lighting</li>
+							<li> Access Technology & Intrusion Detection Devices</li>
+							<li> Visitor Management</li>
+							<li>	Access Control -(PERSON & VEHICLE)
+							<li> Perimeter Security patrolling/ guarding</li>
+							<li> ecurity Communication</li>
+							<li> Supervising 3rd party security providers </li>
+							<li>	Human Behavioral Analysis</li>
+						</ol>
+
+						CCTV Operations
+						<ol>
+							<li> Closed Circuit Television Systems setup </li>
+							<li> CCTV - Operations Log Keeping, Monitoring, Communication & H/Over</li>
+						</ol>
+
+						Screening Equipment Operations
+						<ol>
+							<li> X-ray Screening Theory</li>
+							<li> X-ray Screening - GUIDED TOUR</li>
+							<li>Walk Thro M/ Detector Operations</li>
+						</ol>
+
+						Surveillance Operations
+						<ol>
+							<li> Overview of Surveillance Operations</li>
+							<li> Observation Posts & their uses/ capabilities</li>
+							<li> Foot and Mobile Observation Tactics </li>
+							<li> Evidence Gathering </li>
+							<li> Monitoring & Control of Surveillance Ops</li>
+						</ol>
+
+							<ol>
+								<li> Combining Security with Customer Service </li>
+								<li> Special Events Security Planning </li>
+							</ol>
+
+						Contingency Planning
+						<ol>
+							<li> Fire preparedness </li>
+							<li> First aid </li>
+						</ol>
+
+						Surveys, Audits & Inspections
+						<ol>
+							<li> Survey Process & Exercise </li>
+							<li> Survey Exercise </li>
+							<li> Formal Presentation of Survey Results for evaluation</li>
+						</ol>
+
+
+					<h3>MODULE 7: COUNTY INSPECTORATE AND SECURITY COURSE</h3>
+
+						Target Groups
+						Inspectors all officers, Inspectorate Drivers, Traffic wardens, County Control room operators;
+
+						<strong>I.	LAWS/ REGULATIONS AND  SECURITY INVESTIGATIONS </strong>
+
+							<ol>
+								<li> Investigators the investigative process & the crime scene </li>
+								<li> Physical Evidence </li>
+								<li> Interviewing & Interrogation </li>
+								<li> Field notes, investigation report & file </li>
+								<li> Criminal Procedure Code & the Criminal court process </li>
+								<li> Evidence Act </li>
+								<li> Penal Code including various crimes like sex related, vehicle theft, agriculture/wildlife/environment, robbery, economic crimes & corruption.</li>
+								<li> County act and bylaws </li>
+							</ol>
+
+						<strong>II.	ANTI TERRORISM OPERATIONS </strong>
+
+							<ol>
+								<li> Definitions & types of terrorism </li>
+								<li> An overview Kenyan experience of terrorism </li>
+								<li> Terrorist trend & Interrelationship with other crimes </li>
+								<li> Tactics and targets </li>
+								<li> Counter terrorism organizations </li>
+								<li> Terrorist attack cycle (TAPI) </li>
+								<li> Situational awareness  </li>
+								<li> Introduction to terrorism surveillance ops </li>
+								<li> Introduction to terrorism investigations </li>
+								<li> Overview legal aspects </li>
+								<li> Hostage taking and kidnapping </li>
+								<li> Improvised explosive device & favorite weapons of use awareness </li>
+								<li> Post attack & incident considerations </li>
+								<li> Terrorism and the media </li>
+							</ol>
+
+						<strong>III. VITAL INSTALLATION SECURITY </strong>
+
+						This module is designed to provide baseline knowledge of physical security systems and procedures. The survey process is the common thread used in teaching this program. A comprehensive practical exercise is followed by a formal presentation of the survey results by each of the survey teams at the end. Sub topics covered include:
+
+							<ol>
+								<li> Introduction to threat, risk & vulnerability assessment </li>
+								<li> Theory of physical security and crime prevention </li>
+								<li> Events security operations </li>
+								<li> Protective lighting </li>
+								<li> Closed circuit television systems </li>
+								<li> Information Security  </li>
+								<li> Access control & restricted zone procedures </li>
+								<li> Introduction to counter surveillance </li>
+								<li> Search (PERSON & VEHICLE, BUILDINGS) </li>
+								<li> Operations Security (OPSEC) - perimeter security, patrolling, guarding & road blocks </li>
+							</ol>
+
+						<strong>IV.	SECURITY BASED CUSTOMER SERVICE & PERSONAL LEADERSHIP DEVELOPMENT</strong>
+
+							<ol>
+								<li> Defining customer service </li>
+								<li> Types of customers  </li>
+								<li> 5 quality rules and the circles of service </li>
+								<li> Good/ bad traits of a Security officer towards customers </li>
+								<li> Essentials of good communication </li>
+								<li> Factors for choosing the mode of communication </li>
+								<li> None verbal communication </li>
+								<li> Attitude altitude connection </li>
+								<li> The secret of leadership </li>
+								<li> 7 steps establishing goals & priorities </li>
+							</ol>
+
+						<strong>V. EMERGENCY MEDICAL TRAINING- First Aid </strong>
+
+						Basic course: to ensure the trainees is able to respond to common emergency scenarios including common accident, fire, snake bites and other domestic injuries.
+
+						<strong>VI.	DRILL</strong>
+
+						This course will enhance discipline, command and control. Trainees will be able to pass out in a colorful parade and mount similar activities at future ceremonies.
+
+						<strong> VII. UNARMED COMBAT AND PHYSICAL FITNESS </strong>
+
+						The trainees will receive an introduction to Tae Kwondo and street fighting to ensure they can protect themselves in the course of their work. They will learn the pressure points, process of effecting an arrest and handcuffing of a suspect they will also learn the various methods used to effect a security search.
+
+						<strong> VIII. FIRE AND EMERGENCY RESCUE:  </strong>
+
+						For Fire Fighters & Fire Marshals. This course is tailored made and will be delivered by highly trained professional some who have been involved in developing the national fire training curriculum and have trained a wide range of organizations include members of Kenya defense forces the United nations staff AMISOM personnel Kenya Airports Authority fire and emergency response section among others
+
+					<h3>MODULE 8: SERJEANT AT ARMS COURSE FOR OFFICERS DEPLOYED WITHIN COUNTY ASSEMBLIES <em>5 -10 days</em></h3>
+
+						This course is meant to equip sergeant at arms officers with the prerequisite professional   skills required to protect the assemblies when and out of session. The course modules will include:
+
+							<ol>
+								<li> Intro to vital installation security </li>
+								<li> Emergency Medical Treatment </li>
+								<li> Fire and Emergency Rescue </li>
+								<li> Protective Security Operations </li>
+								<li> Intro to Firearms Operations – handgun </li>
+								<li> Surveillance  and counter surveillance measures </li>
+								<li> Communication in close protection </li>
+								<li> Conflict management & verbal de-escalation skills  </li>
+								<li> Close protection team work </li>
+								<li> Attack on Protectee </li>
+								<li> Intro to Self Defense / unarmed combat </li>
+							</ol>
+
+					<h3>MODULE 9: EXECUTIVE PROTECTION COURSE</h3>
+
+						<strong>Target Group</strong>
+
+						Body guards, security drivers, bouncers and door attendants, personal security agents; working for political leaders at national and county levels [including police officers deployed in these roles], agents working for senior business and corporate leaders, security companies offering close protection services and agents seconded from governments in our region of the continent.
+
+						<strong>Trainee Qualifications</strong>
+
+						All trainees must be forward from the relevant organizations office and may require additional health, competency and background vetting due to the nature of training.
+						In this respect all proposed trainees will undergo the same level of role suitability testing as is used for the best government operatives. Although not a requirement to qualify for our training the results will be shared confidentially with the sponsoring organization.
+
+						<strong>LEVEL 1 AWARD</strong>
+
+						Module Contents:
+
+							<ol>
+								<li> History development of close protection </li>
+								<li> Protective Security Operations + (PSD Diagrams)  </li>
+								<li> Introduction to response to conflict </li>
+								<li> Civil and criminal law </li>
+								<li> Job description and demand for professional (COPs) </li>
+								<li> Human Rights and Community Engagement </li>
+								<li> Protective Security Detail Formations </li>
+								<li> On foot Techniques and Formations </li>
+								<li> Arrivals and Departures + diagrams </li>
+								<li> Motor Vehicle Fundamentals </li>
+								<li> Terrorist Operations and Countermeasures </li>
+								<li> Introduction to the Pistol & shoulder fired weapons </li>
+								<li> Introduction to first aid </li>
+								<li> Self defense </li>
+							</ol>
+
+
+						<strong>LEVEL 2 AWARD</strong>
+
+						Module Contents:
+
+							<ol>
+								<li> Threat and risk assessment & management </li>
+								<li> Surveillance and counter measures </li>
+								<li> Concentric Rings of Security </li>
+								<li> Use of Force Continuum </li>
+								<li> Incidents and dilemmas </li>
+								<li> Pistol & Shoulder fired weapons techniques Live-Fire stage 1 </li>
+								<li> Improvised Explosive Devices </li>
+								<li> Search procedures (IEDs) </li>
+								<li> Communication in close protection </li>
+								<li> Close protection vehicle Techniques </li>
+								<li> Counterterrorism driving </li>
+								<li> Defensive Tactics </li>
+								<li> Attack on Protectee </li>
+								<li> Emergency Medical Actions </li>
+								<li> Self defense </li>
+							</ol>
+
+						<strong>LEVEL 3 AWARD</strong>
+
+						Module Contents:
+
+							<ol>
+								<li> Protective Intelligence </li>
+								<li> Venue based security </li>
+								<li> Close protection vehicle techniques </li>
+								<ul><li> Motorcade Operations </li>
+									<li> Attack on Motorcade </li></ul>
+								<li> Introduction to Advances </li>
+								<li> Route selection, Reconnaissance </li>
+								<li> Mission Planning </li>
+								<li> Close protection team work. </li>
+								<li> Conflict management skills </li>
+								<li> Liaise and communication, with principle/others </li>
+								<li> Etiquette and protocol  </li>
+								<li> Pistol & Shoulder fired weapons techniques Live-Fire stage 2 </li>
+								<li> Unarmed combat protective skills (Martial Arts) </li>
+								<li> Emergency Medical Actions </li>
+							</ol>
+
+
+
+					<h3>MODULE 10: SECURITY TRAINING FOR EXECUTIVES </h3>
+
+						The STEP course is highly customized and designed to teach executives and senior company & government officials how to reduce and respond to risks that can impact the safety of themselves, their families and corporate reputation.
+
+						Course Modules Include:
+
+							<ol>
+								<li> Understanding the concepts of preventive security </li>
+								<li> The acts of madmen: kidnapping, hijackings and executions </li>
+								<li> “complacency leads to vulnerability” philosophy </li>
+								<li> Identifying threats and minimizing associated risks </li>
+								<li> Recognizing your adversary </li>
+								<li> Discerning the formula: threat x vulnerability = risk </li>
+								<li> How your luggage places you at risk </li>
+								<li> Protection techniques for you, your family, friends and crew </li>
+								<li> Tips for international travel: hotels, taxis, theft, illness, emergency preparedness: what to do.  </li>
+							</ol>
+					<h3>MODULE 11: HOSTILE ENVIRONMENT DEPLOYMENT SECURITY AWARENESS</h3>
+
+						HEDSA-TP for NGOs & Businesses, Religious, Sporting or Touring Groups This course is suitable for persons who are likely to be deployed in Hostile areas e.g. Oil drilling operations. Modules include;
+
+							<ol>
+								<li> Current threats, know your enemy </li>
+								<li> Requirements for personal and organization’s security </li>
+								<li> Hostage taking and kidnapping </li>
+								<li> Why some private organizations are seen as actors for government and how to avoid that perception </li>
+								<li> Suggested security phases </li>
+								<li> Site selection </li>
+								<li> Principles of aid organization security </li>
+								<li> Dealing with the media </li>
+								<li> Recognition of weapons and explosives </li>
+								<li> Identifying suspicious persons and items </li>
+								<li> Armed protection, acceptable risk </li>
+								<li> Humanitarian and military relationship </li>
+								<li> Understanding perceptions </li>
+								<li> 3 security strategies in aid operations </li>
+								<li> Vehicle/convoy procedures </li>
+								<li> Emergency and evacuation plans </li>
+								<li> First aid including treating bullet and small explosive wounds </li>
+								<li> Air travel and hotel security. </li>
+							</ol>
+
+					<h3> MODULE 12: SECURITY INVESTIGATIONS</h3>
+
+						The course will enable the learner to undertake investigations of an incident and give evidence in court. SIV-TP covers the investigative processes including;
+
+							<ol><li> Statement writing </li>
+							<li> Evidence preservation </li>
+							<li> The investigation file </li>
+							<li> Interrogation and enquiry techniques </li>
+							<li> Kenyan court procedure </li>
+							<li> Witness handling </li>
+							<li> Introduction to the penal code, criminal procedure code and evidence act & county by laws </li>
+							<li> Private Security Agents power to arrest and or search a premises  </li></ol>
+
+					<h3> MODULE13: SECURITY INTELLIGENCE COURSE.</h3>
+
+						The ILS-TP course provides awareness to trainees, of the critical role intelligence management plays. Covering;
+
+							<ol>
+								<li> The intelligence doctrine </li>
+								<li> Definitions and background </li>
+								<li> Applications and products </li>
+								<li> The intelligence process </li>
+								<li> Its discipline and flexibility </li>
+								<li> Sources of intelligence </li>
+									<ul>
+										<li> COLLECTION - introduction to protective intelligence, setting up analytical case-work, planning the task, resources and timing, development of appropriate data collection plans, compromise and corruption for  PIO </li>
+										<li> ANALYSIS - the pivotal role, functions and responsibilities of the analyst, and appropriate, network analysis  -  objectives, associating entities, link charting techniques, familiarization with computerized charting and visualization tools, techniques and outcomes, introduction to crime pattern analysis, geographic profiling and criminal profiling, integrating data - analyzing it and developing hypotheses and findings, active thinking concepts and their links to analysis and hypotheses </li>
+										<li> DISSEMINATION - preparing verbal briefings and written reports, file composition for PIO </li>
+									</ul>
+							</ol>
+
+						General Information:
+							<ul>
+								<li> Simulations are an integral part of the training and are conducted in a safe learning environment. All courses are delivered in the English language. </li>
+								<li> Many of the training packages can be tailored to include modules from different packages or disciplines to suit the wide range of requirements individual organizations or participants tend to have. </li>
+							</ul>
+
+					<h3><strong>CONTACT PERSON:</strong></h3>
+
+						Lt Col (Rtd) Daniel N Marete
+						Mobile: +254 712 990857
+						Email:	 dmareten@yahoo.co.uk or marete@dimacsinternational.com
+
+				</div>
+			</div>
+	</div>
+</section>
+
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="inner">
+					<div class="content">
+						<section>
+							<h3>We're located</h3>
+							<p>Kahawa Sukari Estate, Garrisa Road, 3rd  South Avenue. Nairobi.</p>
+							<p> Office	: +254 759 838 925 </p>
+						</section>
+						<section>
+							<h4>Shortcut links</h4>
+							<ul class="alt">
+								<li><a href="#">link 1 to direct pages/section.</a></li>
+								<li><a href="#">link 2 to direct pages/section.</a></li>
+								<li><a href="#">link 3 to direct pages/section.</a></li>
+								<li><a href="#">link 4 to direct pages/section.</a></li>
+							</ul>
+						</section>
+						<section>
+							<h4>Find us on Social media</h4>
+							<ul class="plain">
+								<li><a href="#"><i class="icon fa-twitter">&nbsp;</i>Twitter</a></li>
+								<li><a href="#"><i class="icon fa-facebook">&nbsp;</i>Facebook</a></li>
+								<li><a href="#"><i class="icon fa-instagram">&nbsp;</i>Instagram</a></li>
+								<li><a href="#"><i class="icon fa-youtube">&nbsp;</i>Youtube</a></li>
+							</ul>
+						</section>
+					</div>
+					<div class="copyright">
+
+						&copy; DIMACS International 2021 | Designed by <a href="mu-designs.business.com">MuDesgns</a>
+					</div>
+				</div>
+			</footer>
+
+
+		<!-- Scripts -->
+			<script type="text/JavaScript"> var theDate=new Date() document.write(theDate.getFullYear()) </script>
+			<script src="{{url_for('static', filename='assets/js/jquery.min.js')}}"></script>
+			<script src="{{url_for('static', filename='assets/js/breakpoints.min.js')}}"></script>
+			<script src="{{url_for('static', filename='assets/js/browser.min.js')}}"></script>
+			<script src="{{url_for('static', filename='assets/js/util.js')}}"></script>
+			<script src="{{url_for('static', filename='assets/js/main.js')}}"></script>
+			<script src="{{url_for('static', filename='assets/js/readmore.js')}}"></script>
+
+	</body>
+</html>
